@@ -1,0 +1,23 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch: # इससे आप खुद बटन दबाकर APK बना पाएंगे
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build with Buildozer
+        uses: ArtemSerebrennkov/buildozer-action@v1
+        with:
+          command: buildozer android debug
+          buildozer_version: master
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: My-NIL-App
+          path: bin/*.apk
