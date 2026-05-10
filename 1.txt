@@ -1,0 +1,21 @@
+title = NIL Library
+package.name = nillib
+package.domain = org.naramlogic
+source.dir = .
+source.include_exts = py,png,jpg,kv,json
+version = 0.9.8
+
+# Requirements
+requirements = python3,kivy==2.2.1,kivymd==1.1.1,requests,pillow
+
+# Assets
+icon.filename = icon.png
+presplash.filename = splash.png
+
+# Android configurations
+android.api = 31
+android.minapi = 21
+android.permissions = INTERNET
+android.archs = arm64-v8a, armeabi-v7a
+orientation = portrait
+fullscreen = 1
